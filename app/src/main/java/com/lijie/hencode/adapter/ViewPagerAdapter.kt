@@ -20,6 +20,10 @@ class ViewPagerAdapter(private val viewList: MutableList<View>) : PagerAdapter()
         return viewList.size
     }
 
+    override fun destroyItem(container: ViewGroup?, position: Int, `object`: Any?) {
+        container?.removeView(`object` as View)
+    }
+
     override fun getPageTitle(position: Int): CharSequence {
         return viewList[position]::class.java.simpleName
     }

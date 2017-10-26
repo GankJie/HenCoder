@@ -9,8 +9,8 @@ import android.widget.TextView
 import com.lijie.hencode.R
 import com.lijie.hencode.bean.MainAdapterItem
 
-class FragmentAdapter(private val context: Context, private val fragmentList: MutableList<MainAdapterItem>)
-    : RecyclerView.Adapter<FragmentAdapter.FragmentHolder>() {
+class MainRecyclerAdapter(private val context: Context, private val fragmentList: MutableList<MainAdapterItem>)
+    : RecyclerView.Adapter<MainRecyclerAdapter.FragmentHolder>() {
 
     var onItemClickListener: OnItemClickListener? = null
 
