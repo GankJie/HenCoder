@@ -12,7 +12,7 @@ import com.lijie.hencode.bean.MainAdapterItem
 class MainRecyclerAdapter(private val context: Context, private val fragmentList: MutableList<MainAdapterItem>)
     : RecyclerView.Adapter<MainRecyclerAdapter.FragmentHolder>() {
 
-    var onItemClickListener: OnItemClickListener? = null
+    var onItemClickListener: ((Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): FragmentHolder {
         return FragmentHolder(LayoutInflater.from(context).inflate(R.layout.fragment_adapter_item,
@@ -27,7 +27,7 @@ class MainRecyclerAdapter(private val context: Context, private val fragmentList
         val name = fragmentList[position].name
         holder?.fragmentNameText?.text = name
         holder?.fragmentNameText?.setOnClickListener {
-            onItemClickListener?.onItemClick(position)
+            onItemClickListener?.invoke(position)
         }
     }
 
@@ -37,9 +37,4 @@ class MainRecyclerAdapter(private val context: Context, private val fragmentList
             itemView.findViewById<TextView>(R.id.fragmentName)
         }
     }
-
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
-    }
-
 }

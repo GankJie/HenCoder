@@ -20,13 +20,11 @@ class MainActivity : AppCompatActivity() {
         mainRecyclerView.layoutManager = LinearLayoutManager(this)
         val fragmentAdapter = MainRecyclerAdapter(this, fragmentList)
         mainRecyclerView.adapter = fragmentAdapter
-        fragmentAdapter.onItemClickListener = object : MainRecyclerAdapter.OnItemClickListener {
-            override fun onItemClick(position: Int) {
-                val className = fragmentList[position].className
-                val fragment = Fragment.instantiate(this@MainActivity, className)
-                fragmentManager.beginTransaction().add(R.id.mainFragmentLayout, fragment,
-                        className).addToBackStack(className).commit()
-            }
+        fragmentAdapter.onItemClickListener = {
+            val className = fragmentList[it].className
+            val fragment = Fragment.instantiate(this@MainActivity, className)
+            fragmentManager.beginTransaction().add(R.id.mainFragmentLayout, fragment,
+                    className).addToBackStack(className).commit()
         }
     }
 
