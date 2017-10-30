@@ -10,10 +10,11 @@ import android.view.View
 
 class DrawOval(context: Context) : View(context) {
 
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         //空心椭圆
         paint.color = Color.BLUE
         paint.style = Paint.Style.STROKE

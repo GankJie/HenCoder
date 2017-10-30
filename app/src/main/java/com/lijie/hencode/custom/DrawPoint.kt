@@ -1,6 +1,5 @@
 package com.lijie.hencode.custom
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
@@ -9,10 +8,10 @@ import android.view.View
 
 class DrawPoint(context: Context) : View(context) {
 
-    @SuppressLint("DrawAllocation")
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         //圆点
         paint.strokeCap = Paint.Cap.ROUND
         paint.color = Color.RED
