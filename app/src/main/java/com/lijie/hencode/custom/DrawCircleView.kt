@@ -6,7 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.view.View
 
-class DrawCircle(context: Context) : View(context) {
+class DrawCircleView(context: Context) : View(context) {
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 

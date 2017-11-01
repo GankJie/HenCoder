@@ -8,23 +8,22 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.view.View
 
-class DrawOval(context: Context) : View(context) {
+class DrawArcView(context: Context) : View(context) {
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        //空心椭圆
-        paint.color = Color.BLUE
-        paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 10f
-        canvas?.drawOval(RectF(10f, 10f, 210f, 110f), paint)
-        //实心椭圆
-        paint.color = Color.BLUE
+        paint.color = Color.BLACK
         paint.style = Paint.Style.FILL
-        canvas?.drawOval(RectF(220f, 10f, 430f, 110f), paint)
-
+        canvas?.drawArc(RectF(20f, 20f, 700f, 320f),
+                -10f, -110f, true, paint)
+        canvas?.drawArc(RectF(20f, 20f, 700f, 320f),
+                20f, 140f, false, paint)
+        paint.style = Paint.Style.STROKE
+        canvas?.drawArc(RectF(20f, 20f, 700f, 320f),
+                180f, 60f, false, paint)
     }
 
 }

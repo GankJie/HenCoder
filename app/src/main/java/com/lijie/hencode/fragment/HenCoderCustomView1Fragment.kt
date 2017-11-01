@@ -20,11 +20,15 @@ class HenCoderCustomView1Fragment : Fragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewList.add(DrawColor(activity))
-        viewList.add(DrawCircle(activity))
-        viewList.add(DrawRect(activity))
-        viewList.add(DrawPoint(activity))
-        viewList.add(DrawOval(activity))
+        viewList.add(DrawColorView(activity))
+        viewList.add(DrawCircleView(activity))
+        viewList.add(DrawRectView(activity))
+        viewList.add(DrawPointView(activity))
+        viewList.add(DrawOvalView(activity))
+        viewList.add(DrawLineView(activity))
+        viewList.add(DrawRoundRectView(activity))
+        viewList.add(DrawArcView(activity))
+        viewList.add(DrawPathView(activity))
         viewPager.adapter = ViewPagerAdapter(viewList)
         tabLayout.setupWithViewPager(viewPager)
     }

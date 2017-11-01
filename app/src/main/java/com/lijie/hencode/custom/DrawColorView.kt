@@ -5,7 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.view.View
 
-class DrawColor(context: Context) : View(context) {
+class DrawColorView(context: Context) : View(context) {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
